@@ -2,7 +2,7 @@ def getScreenPath():
     screenPath = []
     twoPoints = []
     lineCounter = 0
-    f = open("pathway.txt", "r")
+    f = open("pw.txt", "r")
     for l in f:
         screenXY = l.strip('\n').split(',')
         screenXY[0] = int(screenXY[0])
