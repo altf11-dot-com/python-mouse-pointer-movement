@@ -1,8 +1,14 @@
-# moves the mouse pointer along a path described in pw.txt
+# moves the mouse pointer from one point to another
 # for smooth mouse movement during screen recordings
-# format of pw.txt: x,y\n x,y\n
-# https://github.com/altf11-dot-com/python-mouse-pointer-movement
-# http://altf11.com
+# first time with comments 7-13-2019 12:03 
+# Asus Q324 C:\Users\JLB\Anaconda2\python.exe 11/08/2017  06:41 PM 28,160
+# Python 2.7.14 |Anaconda, Inc.| (default, Nov  8 2017, 13:40:45) [MSC v.1500 64 bit (AMD64)] on win32
+# usage ma.py [g]
+# g = print expose current cursor position
+# 7-13-2019 12:03 points are static during initial builds
+# working ma_BKP_201907131209.py non-g moves after 3 second delay (\python ma.py)
+# working ma_BKP_201907131300.py get, run moves after 3 second delay (\python ma.py [get|run])
+# 1301 - adding countdown
 
 import win32api 
 import time
@@ -62,7 +68,11 @@ if cmd == 'get':
     get_cursor_pos()
 elif cmd == 'run':
     countdown(3)
-    for p in getScreenPath():
+    p1 = [1239,663]
+    p2 = [586, 204]
+    p3 = [428, 543]
+    p4 = [1109,141]
+    for p in [[p1,p2], [p2, p3], [p3, p4]]:
         move_two_points(p)
         time.sleep(.25)
 else:
