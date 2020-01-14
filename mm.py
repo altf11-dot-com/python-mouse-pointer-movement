@@ -61,7 +61,7 @@ def getScreenPath():
 
 if len(sys.argv) == 1:
     cmd = ''
-else:
+else
     cmd = sys.argv[1]
 
 if cmd == 'get':
@@ -75,7 +75,7 @@ elif cmd == 'run':
     for p in [[p1,p2], [p2, p3], [p3, p4]]:
         move_two_points(p)
         time.sleep(.25)
-else:
+else
     print 'usage: python ma.py <command>'
     print '   commands:'
     print '      get     Print current mouse pointer position: x, y'
